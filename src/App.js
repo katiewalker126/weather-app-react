@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import Search from "./Search";
+import Temperature from "./Temperature";
+import Image from "./Image";
+import Observations from "./Observations";
+import City from "./City";
+import Date from "./Date";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="card">
+        <Search />
+        <div className="overview">
+          <div className="row">
+            <div className="col">
+              <div className="clearfix main-weather">
+                <Temperature />
+                <Image />
+              </div>
+            </div>
+            <div className="col">
+              <Observations />
+            </div>
+          </div>
+          <City />
+          <Date />
+        </div>
+        <footer>
+          <div className="footer-signature">
+            <a
+              href="https://github.com/katiewalker126/react-weather-app.git"
+              target="_blank"
+              rel="noreferrer"
+              className="github-link"
+            >
+              Open-source code
+            </a>{" "}
+            by Katie Walker
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
-
-export default App;
