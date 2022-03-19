@@ -4,7 +4,7 @@ body {
   background: #e7dbf9;
 }
 
-.card {
+.App .card {
   padding: 40px 40px 20px 40px;
   max-width: 700px;
   min-width: 700px;
@@ -12,15 +12,15 @@ body {
   border-radius: 8px;
 }
 
-.overview {
+.App .overview {
   height: 280px;
 }
 
-.row {
+.App .row {
   height: 110px;
 }
 
-.footer-signature {
+.App .footer-signature {
   text-align: right;
   color: #676768;
   font-size: 12px;
@@ -28,7 +28,7 @@ body {
   font-weight: 550;
 }
 
-.github-link {
+.App .github-link {
   color: #6d15f2;
   text-decoration: none;
 }

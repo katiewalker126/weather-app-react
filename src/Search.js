@@ -9,6 +9,7 @@ export default function Search() {
           type="search"
           placeholder="Enter a town or city"
           autoComplete="off"
+          autoFocus="on"
           className="search-text-input"
         />
         <input type="submit" value="Search" className="search-button" />
