@@ -1,9 +1,5 @@
 import Search from "./Search";
-import Temperature from "./Temperature";
-import Image from "./Image";
-import Observations from "./Observations";
-import City from "./City";
-import Date from "./Date";
+import Weather from "./Weather";
 
 export default function App() {
   return (
@@ -11,21 +7,7 @@ export default function App() {
       <div className="container">
         <div className="card">
           <Search />
-          <div className="overview">
-            <div className="row">
-              <div className="col">
-                <div className="clearfix main-weather">
-                  <Temperature />
-                  <Image />
-                </div>
-              </div>
-              <div className="col">
-                <Observations />
-              </div>
-            </div>
-            <City />
-            <Date />
-          </div>
+          <Weather />
           <footer>
             <div className="footer-signature">
               <a

@@ -12,14 +12,6 @@ body {
   border-radius: 8px;
 }
 
-.App .overview {
-  height: 280px;
-}
-
-.App .row {
-  height: 110px;
-}
-
 .App .footer-signature {
   text-align: right;
   color: #676768;
