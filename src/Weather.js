@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
+import FormattedDate from "./FormattedDate";
 import cloudy from "./images/cloudy.png";
 
 export default function Weather() {
@@ -15,6 +16,7 @@ export default function Weather() {
       maximumTemp: Math.round(response.data.main.temp_max),
       minimumTemp: Math.round(response.data.main.temp_min),
       city: response.data.name,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -76,7 +78,7 @@ export default function Weather() {
           </div>
         </div>
         <h2 className="City">{weatherData.city}</h2>
-        <h3 className="Date">Sunday 6 February, 17:15 GMT</h3>
+        <FormattedDate date={weatherData.date} />
       </div>
     );
   } else {

@@ -1,5 +1,6 @@
 import Search from "./Search";
 import Weather from "./Weather";
+import "./App.css";
 
 export default function App() {
   return (
