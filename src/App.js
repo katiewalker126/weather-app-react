@@ -1,5 +1,5 @@
 import Search from "./Search";
-import Weather from "./Weather";
+
 import "./App.css";
 
 export default function App() {
@@ -7,8 +7,7 @@ export default function App() {
     <div className="App">
       <div className="container">
         <div className="card">
-          <Search />
-          <Weather />
+          <Search defaultCity="London" />
           <footer>
             <div className="footer-signature">
               <a

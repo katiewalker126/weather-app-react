@@ -1,93 +1,59 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
 import cloudy from "./images/cloudy.png";
 
-export default function Weather() {
-  const [weatherData, setWeatherData] = useState({ ready: false });
-
-  function handleResponse(response) {
-    setWeatherData({
-      ready: true,
-      temperature: Math.round(response.data.main.temp),
-      description: response.data.weather[0].main,
-      wind: Math.round(response.data.wind.speed),
-      maximumTemp: Math.round(response.data.main.temp_max),
-      minimumTemp: Math.round(response.data.main.temp_min),
-      city: response.data.name,
-      date: new Date(response.data.dt * 1000),
-    });
-  }
-
-  if (weatherData.ready) {
-    return (
-      <div className="Weather">
-        <div className="row">
-          <div className="col">
-            <div className="clearfix">
-              <h1>
-                <span className="MainTemperature">
-                  {weatherData.temperature}
-                </span>
-                <span className="MainTemperatureUnit">°C</span>
-              </h1>
-              <div className="MainSymbol">
-                <img src={cloudy} alt="current weather symbol" width="120" />
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="Observations">
-              <ul>
-                <li>
-                  Forecast:
-                  <strong>
-                    <span className="WeatherDescription"></span>{" "}
-                    {weatherData.description}
-                  </strong>
-                </li>
-                <li>
-                  Wind:
-                  <strong>
-                    <span className="Wind"> {weatherData.wind}</span> m/s
-                  </strong>
-                </li>
-                <li>
-                  Maximum:
-                  <strong>
-                    <span className="MaximumTemp">
-                      {" "}
-                      {weatherData.maximumTemp}
-                    </span>
-                    °
-                  </strong>
-                </li>
-                <li>
-                  Minimum:
-                  <strong>
-                    <span className="MinimumTemp">
-                      {" "}
-                      {weatherData.minimumTemp}
-                    </span>
-                    °
-                  </strong>
-                </li>
-              </ul>
+export default function Weather(props) {
+  return (
+    <div className="Weather">
+      <div className="row">
+        <div className="col">
+          <div className="clearfix">
+            <h1>
+              <span className="MainTemperature">{props.data.temperature}</span>
+              <span className="MainTemperatureUnit">°C</span>
+            </h1>
+            <div className="MainSymbol">
+              <img src={cloudy} alt="current weather symbol" width="120" />
             </div>
           </div>
         </div>
-        <h2 className="City">{weatherData.city}</h2>
-        <FormattedDate date={weatherData.date} />
+        <div className="col">
+          <div className="Observations">
+            <ul>
+              <li>
+                Forecast:
+                <strong>
+                  <span className="WeatherDescription"></span>{" "}
+                  {props.data.description}
+                </strong>
+              </li>
+              <li>
+                Wind:
+                <strong>
+                  <span className="Wind"> {props.data.wind}</span> m/s
+                </strong>
+              </li>
+              <li>
+                Maximum:
+                <strong>
+                  <span className="MaximumTemp"> {props.data.maximumTemp}</span>
+                  °
+                </strong>
+              </li>
+              <li>
+                Minimum:
+                <strong>
+                  <span className="MinimumTemp"> {props.data.minimumTemp}</span>
+                  °
+                </strong>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
-    );
-  } else {
-    const apiKey = "159ab5e75e6ed3b8cb370b2d499a9313";
-    let city = "London";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-
-    axios.get(apiUrl).then(handleResponse);
-
-    return "Loading...";
-  }
+      <h2 className="City">{props.data.city}</h2>
+      <FormattedDate date={props.data.date} />
+    </div>
+  );
 }
