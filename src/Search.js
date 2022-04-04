@@ -11,6 +11,7 @@ export default function Search(props) {
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.main.temp),
+      iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       description: response.data.weather[0].main,
       wind: Math.round(response.data.wind.speed),
       maximumTemp: Math.round(response.data.main.temp_max),

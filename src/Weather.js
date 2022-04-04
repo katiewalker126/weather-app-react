@@ -1,7 +1,6 @@
 import React from "react";
 import "./Weather.css";
 import FormattedDate from "./FormattedDate";
-import cloudy from "./images/cloudy.png";
 
 export default function Weather(props) {
   return (
@@ -14,7 +13,11 @@ export default function Weather(props) {
               <span className="MainTemperatureUnit">°C</span>
             </h1>
             <div className="MainSymbol">
-              <img src={cloudy} alt="current weather symbol" width="120" />
+              <img
+                src={props.data.iconUrl}
+                alt="current weather symbol"
+                width="120"
+              />
             </div>
           </div>
         </div>
