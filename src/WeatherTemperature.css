@@ -1,0 +1,15 @@
+.WeatherTemperature .MainTemperature {
+  font-size: 80px;
+  font-weight: 500;
+  position: relative;
+  float: left;
+}
+
+.WeatherTemperature .MainTemperatureUnit {
+  font-size: 30px;
+  font-weight: 600;
+  position: relative;
+  float: left;
+  bottom: -10px;
+  right: -2px;
+}
