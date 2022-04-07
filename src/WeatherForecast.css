@@ -1,0 +1,16 @@
+.WeatherForecast {
+  text-align: center;
+}
+
+.WeatherForecast .ForecastDay,
+.ForecastMaxTemperature,
+.ForecastMinTemperature {
+  font-weight: 500;
+  line-height: 2;
+  font-size: 16px;
+}
+
+.WeatherForecast .ForecastMinTemperature {
+  opacity: 0.5;
+  margin-left: 3px;
+}
