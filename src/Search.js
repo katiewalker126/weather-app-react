@@ -18,6 +18,7 @@ export default function Search(props) {
       maximumTemp: Math.round(response.data.main.temp_max),
       minimumTemp: Math.round(response.data.main.temp_min),
       city: response.data.name,
+      coordinates: response.data.coord,
       date: new Date(response.data.dt * 1000),
     });
   }
@@ -52,7 +53,7 @@ export default function Search(props) {
           <input type="submit" value="Search" className="search-button" />
         </form>
         <WeatherCurrent data={weatherData} />
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
