@@ -1,11 +1,11 @@
 import React from "react";
-import "./Weather.css";
+import "./WeatherCurrent.css";
 import WeatherTemperature from "./WeatherTemperature";
 import FormattedDate from "./FormattedDate";
 
-export default function Weather(props) {
+export default function WeatherCurrent(props) {
   return (
-    <div className="Weather">
+    <div className="WeatherCurrent">
       <div className="row">
         <div className="col">
           <div className="clearfix">
