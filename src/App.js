@@ -11,7 +11,7 @@ export default function App() {
           <footer>
             <div className="footer-signature">
               <a
-                href="https://github.com/katiewalker126/react-weather-app.git"
+                href="https://github.com/katiewalker126/weather-app-react"
                 target="_blank"
                 rel="noreferrer"
                 className="github-link"
