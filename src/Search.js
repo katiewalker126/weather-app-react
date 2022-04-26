@@ -58,6 +58,6 @@ export default function Search(props) {
     );
   } else {
     search();
-    return "Loading...";
+    return null;
   }
 }
